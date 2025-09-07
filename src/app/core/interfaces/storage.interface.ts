@@ -1,7 +1,10 @@
+import { Product } from "../models/product.model";
+
 export interface IStorageService<T>{
     getAll():T[];
     getById(id:string):T|undefined;
-    update(item:T):void;
+    create(item:Product):void
+    update(item:T,id:string):void;
     delete(id:string):boolean;
 
 }
