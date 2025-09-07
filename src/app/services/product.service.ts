@@ -9,6 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 export class ProductService implements IStorageService<Product>{
 private readonly STORAGE_KEY='products';
 private productSubject=new BehaviorSubject<Product[]>([]);
+products$=this.productSubject.asObservable();
 
 constructor(){
   this.loadProductFromStorage();
