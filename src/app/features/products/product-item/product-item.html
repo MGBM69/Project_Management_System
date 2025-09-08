@@ -9,6 +9,7 @@
     </div>
     <div class="card-footer">
         <div class="d-flex justify-content-between">
+            <button class="btn btn-primary" [routerLink]="['/products',product.id]">View Product</button>
             <button class="btn btn-outline-primary" [routerLink]="['/products',product.id,'edit']">Edit</button>
             <button class="btn btn-outline-danger" (click)="onDelete()">Delete</button>
         </div>
