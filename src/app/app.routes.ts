@@ -15,5 +15,9 @@ export const routes: Routes = [
     {
         path:'product/new',
         component:ProductForm
+    },
+    {
+        path:'products/:id/edit',
+        loadComponent:()=>import('./features/products/product-fome/product-home').then((m)=>m.ProductForm),
     }
 ];

@@ -3,10 +3,10 @@
         <h2>Products</h2>
         <button class="btn btn-primary" [routerLink]="'/product/new'">Add New Product</button>
     </div>
-    <div class="row">
+    <div class="row row-cols-1 row-cols-md-3">
         @for(product of products$|async;track product.id){
             <div class="col">
-                <app-product-item [product]="product"></app-product-item>
+                <app-product-item [product]="product" (delete)="onDelete($event)"></app-product-item>
             </div>
         }@empty{
             <div class="col">No Products Avilable!</div>

@@ -15,4 +15,11 @@ export class ProductList {
 
   products$=this.productService.products$;
 
+  onDelete(productId:string){
+    if(confirm('Are you sure want to delete this product')){
+      this.productService.delete(productId);
+    }
+
+  }
+
 }
