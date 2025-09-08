@@ -57,6 +57,9 @@ export class ProductForm implements OnInit {
 
   onSubmit(){
     if(this.productForm.valid){
+      if(this.isEditMode()){
+        this.productService.update(this.productForm.value,this.productId()!);
+      }
       this.productService.create(this.productForm.value);
       this.router.navigate(['/']);
     }
